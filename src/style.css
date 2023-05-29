@@ -1,0 +1,30 @@
+* {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.logo {
+  width: 10%;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+i {
+  width: auto;
+}
+
+li {
+  list-style: none;
+  padding: 0.5rem;
+}
