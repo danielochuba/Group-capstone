@@ -28,3 +28,26 @@ li {
   list-style: none;
   padding: 0.5rem;
 }
+
+.cards-display {
+  display: grid;
+}
+
+.card {
+  width: 15rem;
+}
+
+.movie-img {
+  width: 15rem;
+  height: 250px;
+}
+.card-text {
+  text-align: right;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  border: 1px solid grey;
+}
