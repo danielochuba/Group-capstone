@@ -59,6 +59,7 @@ li {
 .card {
   width: 100px;
 }
+
 .presentation {
   display: flex;
   gap: 0.5rem;
