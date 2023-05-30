@@ -1,4 +1,4 @@
-const urlAPI = 'https://api.tvmaze.com/shows/1/seasons';
+const urlAPI = 'https://api.tvmaze.com/shows/7/seasons';
 
 const homePage = async () => {
   try {

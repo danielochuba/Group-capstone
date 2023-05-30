@@ -68,11 +68,15 @@ footer {
 }
 
 .popup-container {
-  width: 50%;
+  width: 60%;
+  display: flex;
   background-color: whitesmoke;
+  border: 3px solid black;
   text-align: center;
   position: absolute;
   z-index: 1000;
+  left: 200px;
+  top: 100px;
 }
 
 .popup-container h2 {
@@ -86,15 +90,28 @@ footer {
 }
 
 .popup-container img {
-  width: auto;
-  margin: 0 auto;
-  max-width: 350px;
+  width: 60%;
   height: 350px;
+}
+
+.seriePop {
+  margin-left: 12px;
+}
+
+.closepopup {
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: none;
+  font-weight: 500;
 }
 
 .popup-container input,
 .popup-container textarea {
-  width: 100%;
+  width: 80%;
+  line-height: 24px;
+  color: black;
 }
 
 .popup-container form {

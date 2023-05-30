@@ -1,11 +1,11 @@
 const showPopup = () => {
   const popupContainer = document.querySelector('.popupContainer');
-  const urlAPI = 'https://api.tvmaze.com/shows/1/seasons';
+  const urlAPI = 'https://api.tvmaze.com/shows/7/seasons';
 
   fetch(urlAPI)
-    .then(response => response.json())
-    .then(data => {
-      data.forEach(serie => {
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((serie) => {
         const pop = document.createElement('div');
         pop.className = 'popup-container';
         pop.innerHTML = `
@@ -43,7 +43,7 @@ const showPopup = () => {
         });
       });
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Error fetching data:', error);
     });
 };
