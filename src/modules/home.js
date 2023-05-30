@@ -36,7 +36,7 @@ const serieshow = [
 
 const cardContainer = document.getElementById('container');
 serieshow.forEach((season) => {
-   cardContainer.innerHTML += (`
+  cardContainer.innerHTML += (`
   <div class="card col-lg-4 col-md-6 col-sm-12 gy-3">
       <img src="${season.serie}" class="card-img-top" alt="...">
       <div class="card-body">

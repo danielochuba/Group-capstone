@@ -53,8 +53,7 @@ li {
   justify-content: center;
 }
 
-footer {
-  
+footer { 
   position: relative;
   bottom: 0;
   width: 95%;
@@ -65,5 +64,5 @@ footer {
   margin-top: 20px;
   margin-bottom: 5px;
   background: gray;
-  color: #ffffff;
+  color: #fff;
 }
