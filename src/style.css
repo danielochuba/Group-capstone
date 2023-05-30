@@ -66,3 +66,38 @@ footer {
   background: gray;
   color: #fff;
 }
+
+.popup-container {
+  width: 50%;
+  background-color: whitesmoke;
+  text-align: center;
+  position: absolute;
+  z-index: 1000;
+}
+
+.popup-container h2 {
+  text-align: center;
+}
+
+.popup-container .closepopup {
+  position: absolute;
+  font-size: 5rem;
+  right: 0;
+}
+
+.popup-container img {
+  width: auto;
+  margin: 0 auto;
+  max-width: 350px;
+  height: 350px;
+}
+
+.popup-container input,
+.popup-container textarea {
+  width: 100%;
+}
+
+.popup-container form {
+  margin: 0 auto;
+  width: 50%;
+}
