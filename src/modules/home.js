@@ -17,35 +17,35 @@ const homePage = async () => {
 const serieshow = [
   {
     serie: './images/serie1.PNG',
-    name: 'lorem ',
+    name: 'lorem',
   },
   {
-    serie: './images/srrie2.PNG',
-    name: 'lorem ',
+    serie: './images/serie2.PNG',
+    name: 'lorem',
   },
   {
     serie: './images/serie3.PNG',
-    name: 'lorem ',
+    name: 'lorem',
   },
   {
     serie: './images/serie4.PNG',
-    name: 'lorem ',
+    name: 'lorem',
   },
   {
-    serie: './images/seriee5.PNG',
-    name: 'lorem ',
+    serie: './images/serie5.PNG',
+    name: 'lorem',
   },
   {
     serie: './images/serie6.PNG',
-    name: 'lorem ',
+    name: 'lorem',
   },
   {
     serie: './images/serie7.PNG',
-    name: 'lorem ',
+    name: 'lorem',
   },
   {
     serie: './images/serie8.PNG',
-    name: 'lorem ',
+    name: 'lorem',
   },
 ];
 
