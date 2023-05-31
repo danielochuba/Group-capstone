@@ -8,20 +8,18 @@ const showPopup = async () => {
   const movieLink = document.querySelector('.movie-link');
   const summaryText = document.querySelector('.summary-text');
 
-  const commentBtns = document.querySelectorAll('.comments-btn');
-  commentBtns.forEach((btn, index) => {
-    btn.addEventListener('click', async (event) => {
-      event.stopPropagation();
-      const data = await getAPIData();
-      popupImg.src = data[index].image.medium;
-      popupTitle.innerHTML = data[index].name;
-      premierDate.innerHTML = `<h5>Premiered:&nbsp;&nbsp;</h5> ${data[index].premiereDate}`;
-      endDate.innerHTML = `<h5>End date: &nbsp;&nbsp;</h5> ${data[index].endDate}`;
-      movieLink.href = data[index].url;
-      summaryText.innerHTML = data[index].summary;
+        popupContainer.appendChild(pop);
+        const close = pop.querySelector('.closepopup');
+        close.addEventListener('click', () => {
+          popupContainer.removeChild(pop);
+        });
+      });
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
     });
   });
 };
 
 // Call the showPopup function to fetch data and display popups
-export default showPopup;
+showPopup();
