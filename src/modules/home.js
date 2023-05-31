@@ -1,4 +1,6 @@
-import showPopup from './popup.js';
+import {
+  showPopup, getComments, displayComments, recordComment,
+} from './popup.js';
 import getAPIData from './TVmazapi.js';
 
 const showData = async () => {
