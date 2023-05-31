@@ -1,5 +1,3 @@
-import displayCommentsPopup from './modules/comments.js';
-
 const showPopup = () => {
   const popupContainer = document.querySelector('.popupContainer');
   const urlAPI = 'https://api.tvmaze.com/shows/7/seasons';
@@ -42,11 +40,6 @@ const showPopup = () => {
         const close = pop.querySelector('.closepopup');
         close.addEventListener('click', () => {
           popupContainer.removeChild(pop);
-        });
-
-        const commentButton = pop.querySelector(`.commentButton[data-index="${serie.id}"]`);
-        commentButton.addEventListener('click', () => {
-          displayCommentsPopup(serie.id);
         });
       });
     })
