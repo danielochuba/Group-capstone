@@ -83,6 +83,15 @@ footer {
   text-align: center;
 }
 
+.closepopup {
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: none;
+  font-weight: 500;
+}
+
 .popup-container .closepopup {
   position: absolute;
   font-size: 5rem;
@@ -96,15 +105,6 @@ footer {
 
 .seriePop {
   margin-left: 12px;
-}
-
-.closepopup {
-  cursor: pointer;
-  border: none;
-  border-radius: 0;
-  outline: none;
-  background: none;
-  font-weight: 500;
 }
 
 .popup-container input,

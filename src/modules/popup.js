@@ -42,11 +42,6 @@ const showPopup = () => {
           popupContainer.removeChild(pop);
         });
       });
-    })
-    .catch((error) => {
-      console.error('Error fetching data:', error);
     });
 };
-
-// Call the showPopup function to fetch data and display popups
 showPopup();
