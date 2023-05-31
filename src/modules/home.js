@@ -1,4 +1,4 @@
-const urlAPI = 'https://api.tvmaze.com/shows/1/seasons';
+const urlAPI = 'https://api.tvmaze.com/shows/7/seasons';
 
 const homePage = async () => {
   try {
@@ -16,62 +16,45 @@ const homePage = async () => {
 
 const serieshow = [
   {
-    serie: './images/serie1.PNG',
+    serie: 'https://shorturl.at/coBWZ',
     name: 'lorem',
   },
   {
-    serie: './images/serie2.PNG',
+    serie: 'https://shorturl.at/coBWZ',
     name: 'lorem',
   },
   {
-    serie: './images/serie3.PNG',
+    serie: 'https://shorturl.at/coBWZ',
     name: 'lorem',
   },
   {
-    serie: './images/serie4.PNG',
+    serie: 'https://shorturl.at/coBWZ',
     name: 'lorem',
   },
-  {
-    serie: './images/serie5.PNG',
-    name: 'lorem',
-  },
-  {
-    serie: './images/serie6.PNG',
-    name: 'lorem',
-  },
-  {
-    serie: './images/serie7.PNG',
-    name: 'lorem',
-  },
-  {
-    serie: './images/serie8.PNG',
-    name: 'lorem',
-  },
+
 ];
 
-const presenter6 = document.getElementById('container');
+const cardContainer = document.getElementById('container');
 serieshow.forEach((season) => {
-  const allseries = document.createElement('shows');
-  allseries.innerHTML = (`
-    <div class="cards-display">
-        <img class = "card" src="${season.serie}" alt="serie-images">
-        <div class="presentation">
-            <h3> ${season.name}</h2>
-            <div class="like">
-            <i class="fa-regular fa-heart"></i>
-            <div class="count">
-             <p>5</p>
-              <p>likes</p>
-            </div>
-          </div>
+  cardContainer.innerHTML += (`
+  <div class="card col-lg-4 col-md-6 col-sm-12 gy-3">
+      <img src="${season.serie}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">${season.name}</h5>
+        <p class="card-text">
+          <span class="badge text-bg-secondary ms-2">4</span> Likes
+
+          <button type="button" class="btn btn-outline-info btn-sm ">
+            🤍
+          </button>
+        </p>
+        <div class="description-buttons justify-content-center">
+            <a href="#" class="btn btn-primary btn-sm comments">comments</a><br>
+            <a href="#" class="btn btn-primary btn-sm">Reservations</a>
         </div>
-        <div class="btn">
-         <button class="comment">comments</button>
-        <button class="Reservation">Reservations</button>
-        <div/>
+      </div>
   </div>
     `);
-  presenter6.appendChild(allseries);
 });
 
 export default homePage;
