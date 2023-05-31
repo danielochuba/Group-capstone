@@ -19,6 +19,9 @@ const showPopup = async () => {
       endDate.innerHTML = `<h5>End date: &nbsp;&nbsp;</h5> ${data[index].endDate}`;
       movieLink.href = data[index].url;
       summaryText.innerHTML = data[index].summary;
+
+      // Load comments for the selected item
+      loadComments(data[index].id);
     });
   });
 };
