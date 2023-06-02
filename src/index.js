@@ -1,6 +1,9 @@
 import './style.css';
 import homePage from './modules/home.js';
-import getserie from './modules/popup.js';
+import showPopup from './modules/popup.js';
 
 homePage();
-getserie();
+
+window.document.addEventListener('DOMContentLoaded', () => {
+  showPopup();
+});
