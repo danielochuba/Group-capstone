@@ -21,25 +21,25 @@ export const displayLikes = () => {
 };
 
 export const postLikes = async (id) => {
-    const response = await fetch(LIKE_URL, {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-        item_id: id,
-        }),
-    });
-    return response.json();
-    };
+  const response = await fetch(LIKE_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: id,
+    }),
+  });
+  return response.json();
+};
 
 export const submitLikes = () => {
-    likeBtns.forEach((btn) => {
-        btn.addEventListener('click', (event) => {
-            event.stopPropagation();
-            const id = btn.id;
-            postLikes(id);
-            displayLikes();
-        });
+  likeBtns.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const { id } = btn;
+      postLikes(id);
+      displayLikes();
     });
-}
+  });
+};
