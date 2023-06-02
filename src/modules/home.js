@@ -1,6 +1,6 @@
 import showPopup from './popup.js';
 import getAPIData from './TVmazapi.js';
-import { displayLikes } from './likesApiConfig.js';
+import { displayLikes, submitLikes } from './likesApiConfig.js';
 
 const showData = async () => {
   const result = await getAPIData();
@@ -31,7 +31,8 @@ const showData = async () => {
 const homePage = async () => {
   await showData();
   await showPopup();
-  await displayLikes();
+  submitLikes();
+  displayLikes();
 };
 
 export default homePage;

@@ -1,4 +1,6 @@
 const LIKE_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Nbc4s2TFp5CN6zapCfwg/likes';
+const likeBtns = document.querySelectorAll('.like-btn');
+const likeBadges = document.querySelectorAll('.like-count');
 
 export const getLikes = async () => {
   const response = await fetch(LIKE_URL);
@@ -7,7 +9,6 @@ export const getLikes = async () => {
 };
 
 export const displayLikes = () => {
-  const likeBadges = document.querySelectorAll('.like-count');
   getLikes().then((data) => {
     data.forEach((like) => {
       likeBadges.forEach((badge) => {
@@ -18,3 +19,27 @@ export const displayLikes = () => {
     });
   });
 };
+
+export const postLikes = async (id) => {
+    const response = await fetch(LIKE_URL, {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+        item_id: id,
+        }),
+    });
+    return response.json();
+    };
+
+export const submitLikes = () => {
+    likeBtns.forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const id = btn.id;
+            postLikes(id);
+            displayLikes();
+        });
+    });
+}
