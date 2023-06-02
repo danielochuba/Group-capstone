@@ -21,32 +21,26 @@ const showPopup = async () => {
       movieLink.href = data[index].url;
       summaryText.innerHTML = data[index].summary;
 
-      const commentForm = document.querySelector(`form[data-index="${index}"]`);
-      const commentButton = commentForm.querySelector('.commentButton');
-      const commentInput = commentForm.querySelector('.comment');
-      const commentsSection = document.querySelector('.comments-section');
+      const commentForms = document.querySelectorAll('.modal-form');
+      commentForms.forEach((form) => {
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          const username = form.querySelector('.username').value;
+          const comment = form.querySelector('.comment').value;
+          const itemId = form.getAttribute('data-index');
 
-      commentForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const comment = commentInput.value;
-        addComment(comment);
-
-        // Display the comment in the comments section
-        const commentItem = document.createElement('div');
-        commentItem.classList.add('comment-item');
-        commentItem.innerHTML = `<p>${comment}</p>`;
-        commentsSection.appendChild(commentItem);
-
-        commentInput.value = '';
+          try {
+            await addComment(itemId, username, comment);
+            form.reset(); // Reset the form fields
+            await getComments(itemId); // Reload comments
+          } catch (error) {
+            // console.error(error);
+          }
+        });
       });
     });
   });
 };
-
-await getComments();
-
-const comment = 'This is a new comment';
-addComment(comment);
 
 // Call the showPopup function to fetch data and display popups
 export default showPopup;

@@ -114,9 +114,9 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_home_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/home.js */ \"./src/modules/home.js\");\n/* harmony import */ var _modules_popup_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/popup.js */ \"./src/modules/popup.js\");\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_modules_home_js__WEBPACK_IMPORTED_MODULE_1__, _modules_popup_js__WEBPACK_IMPORTED_MODULE_2__]);\n([_modules_home_js__WEBPACK_IMPORTED_MODULE_1__, _modules_popup_js__WEBPACK_IMPORTED_MODULE_2__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);\n\n\n\n\n(0,_modules_home_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\nwindow.document.addEventListener('DOMContentLoaded', () => {\n  (0,_modules_popup_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n});\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });\n\n//# sourceURL=webpack://group-capstone/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_home_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/home.js */ \"./src/modules/home.js\");\n/* harmony import */ var _modules_popup_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/popup.js */ \"./src/modules/popup.js\");\n\r\n\r\n\r\n\r\n(0,_modules_home_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n\r\nwindow.document.addEventListener('DOMContentLoaded', () => {\r\n  (0,_modules_popup_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n});\n\n//# sourceURL=webpack://group-capstone/./src/index.js?");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   addComment: () => (/* binding */ addComment),\n/* harmony export */   getComments: () => (/* binding */ getComments)\n/* harmony export */ });\nconst involvement = 'Nbc4s2TFp5CN6zapCfwg';\r\n\r\n// Function to get comments for an item\r\nconst getComments = async (itemId) => {\r\n  try {\r\n    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/series/${involvement}/comments?item_id=${itemId}`);\r\n    const comments = await response.json();\r\n\r\n    const commentsSection = document.querySelector('.comments-section');\r\n    commentsSection.innerHTML = '';\r\n\r\n    comments.forEach((comment) => {\r\n      const commentElement = document.createElement('div');\r\n      commentElement.innerHTML = `<p><strong>${comment.username}</strong>: ${comment.comment}</p>`;\r\n      commentsSection.appendChild(commentElement);\r\n    });\r\n  } catch (error) {\r\n    const commentsSection = document.querySelector('.comments-section');\r\n    commentsSection.innerHTML = 'Error loading...... ';\r\n  }\r\n};\r\n\r\n// Function to add a comment\r\nconst addComment = async (itemId, username, comment) => {\r\n  const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/series/${involvement}/comments`, {\r\n    method: 'POST',\r\n    headers: {\r\n      'Content-type': 'application/json; charset=UTF-8',\r\n    },\r\n    body: JSON.stringify({\r\n      item_id: itemId,\r\n      username: username,\r\n      comment: comment,\r\n    }),\r\n  });\r\n\r\n  if (response.ok) {\r\n    // Comment added successfully, reload comments\r\n    await getComments(itemId);\r\n    return 'Comment added.';\r\n  }\r\n  throw new Error('Failed to add comment.');\r\n};\r\n\r\n\r\n\n\n//# sourceURL=webpack://group-capstone/./src/modules/cmment.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   addComment: () => (/* binding */ addComment),\n/* harmony export */   getComments: () => (/* binding */ getComments)\n/* harmony export */ });\nconst involvement = 'Nbc4s2TFp5CN6zapCfwg';\r\n\r\nconst getComments = async (itemId) => {\r\n  try {\r\n    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${involvement}/comments?item_id=${itemId}`);\r\n    const comments = await response.json();\r\n\r\n    const commentsSection = document.querySelector('.comments-section');\r\n    commentsSection.innerHTML = '';\r\n\r\n    comments.forEach((comment) => {\r\n      const commentElement = document.createElement('div');\r\n      commentElement.innerHTML = `<p><strong>${comment.creation_date}</strong>: <strong>${comment.username}</strong>: ${comment.comment}</p>`;\r\n      commentsSection.appendChild(commentElement);\r\n    });\r\n  } catch (error) {\r\n    const commentsSection = document.querySelector('.comments-section');\r\n    commentsSection.innerHTML = 'Error loading comments.';\r\n  }\r\n};\r\n\r\nconst addComment = async (itemId, username, comment) => {\r\n  const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${involvement}/comments`, {\r\n    method: 'POST',\r\n    headers: {\r\n      'Content-type': 'application/json; charset=UTF-8',\r\n    },\r\n    body: JSON.stringify({\r\n      item_id: itemId,\r\n      username: username,\r\n      comment: comment,\r\n    }),\r\n  });\r\n\r\n  if (response.ok) {\r\n    await getComments(itemId); // Reload comments after successful addition\r\n    return 'Comment added.';\r\n  }\r\n  throw new Error('Failed to add comment.');\r\n};\r\n\r\n\r\n\n\n//# sourceURL=webpack://group-capstone/./src/modules/cmment.js?");
 
 /***/ }),
 
@@ -144,9 +144,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /*!*****************************!*\
   !*** ./src/modules/home.js ***!
   \*****************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _popup_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./popup.js */ \"./src/modules/popup.js\");\n/* harmony import */ var _TVmazapi_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TVmazapi.js */ \"./src/modules/TVmazapi.js\");\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_popup_js__WEBPACK_IMPORTED_MODULE_0__]);\n_popup_js__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];\n\r\n\r\n\r\nconst showData = async () => {\r\n  const result = await (0,_TVmazapi_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n  const cardContainer = document.querySelector('#container');\r\n  result.forEach((season) => {\r\n    cardContainer.innerHTML += `\r\n        <div class=\"card col-lg-4 col-md-6 col-sm-12 gy-3\">\r\n            <img src=\"${season.image.original}\" class=\"card-img-top\" alt=\"...\">\r\n            <div class=\"card-body\">\r\n              <h5 class=\"card-title\">${season.name}</h5>\r\n              <p class=\"card-text\">\r\n                <span class=\"badge text-bg-secondary ms-2\">4</span> Likes\r\n\r\n                <button type=\"button\" class=\"btn btn-outline-info btn-sm \">\r\n                  🤍\r\n                </button>\r\n              </p>\r\n              <div class=\"description-buttons justify-content-center\">\r\n                  <a href=\"#\" class=\"btn btn-primary btn-sm comments-btn\" data-bs-toggle=\"modal\" data-bs-target=\"#comment-modal\">comments</a><br>\r\n                  <a href=\"#\" class=\"btn btn-primary btn-sm\">Reservations</a>\r\n              </div>\r\n            </div>\r\n        </div>\r\n          `;\r\n  });\r\n};\r\nconst homePage = async () => {\r\n  await showData();\r\n  await (0,_popup_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (homePage);\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });\n\n//# sourceURL=webpack://group-capstone/./src/modules/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _popup_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./popup.js */ \"./src/modules/popup.js\");\n/* harmony import */ var _TVmazapi_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TVmazapi.js */ \"./src/modules/TVmazapi.js\");\n\r\n\r\n\r\nconst showData = async () => {\r\n  const result = await (0,_TVmazapi_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n  const cardContainer = document.querySelector('#container');\r\n  result.forEach((season) => {\r\n    cardContainer.innerHTML += `\r\n        <div class=\"card col-lg-4 col-md-6 col-sm-12 gy-3\">\r\n            <img src=\"${season.image.original}\" class=\"card-img-top\" alt=\"...\">\r\n            <div class=\"card-body\">\r\n              <h5 class=\"card-title\">${season.name}</h5>\r\n              <p class=\"card-text\">\r\n                <span class=\"badge text-bg-secondary ms-2\">4</span> Likes\r\n\r\n                <button type=\"button\" class=\"btn btn-outline-info btn-sm \">\r\n                  🤍\r\n                </button>\r\n              </p>\r\n              <div class=\"description-buttons justify-content-center\">\r\n                  <a href=\"#\" class=\"btn btn-primary btn-sm comments-btn\" data-bs-toggle=\"modal\" data-bs-target=\"#comment-modal\">comments</a><br>\r\n                  <a href=\"#\" class=\"btn btn-primary btn-sm\">Reservations</a>\r\n              </div>\r\n            </div>\r\n        </div>\r\n          `;\r\n  });\r\n};\r\nconst homePage = async () => {\r\n  await showData();\r\n  await (0,_popup_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (homePage);\n\n//# sourceURL=webpack://group-capstone/./src/modules/home.js?");
 
 /***/ }),
 
@@ -154,9 +154,9 @@ eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__
 /*!******************************!*\
   !*** ./src/modules/popup.js ***!
   \******************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _TVmazapi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TVmazapi.js */ \"./src/modules/TVmazapi.js\");\n/* harmony import */ var _cmment_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cmment.js */ \"./src/modules/cmment.js\");\n\r\n\r\n\r\nconst showPopup = async () => {\r\n  const popupImg = document.querySelector('.modal--img');\r\n  const popupTitle = document.querySelector('.modal-title');\r\n  const premierDate = document.querySelector('.premier-date');\r\n  const endDate = document.querySelector('.end-date');\r\n  const movieLink = document.querySelector('.movie-link');\r\n  const summaryText = document.querySelector('.summary-text');\r\n\r\n  const commentBtns = document.querySelectorAll('.comments-btn');\r\n  commentBtns.forEach((btn, index) => {\r\n    btn.addEventListener('click', async (event) => {\r\n      event.stopPropagation();\r\n      const data = await (0,_TVmazapi_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n      popupImg.src = data[index].image.medium;\r\n      popupTitle.innerHTML = data[index].name;\r\n      premierDate.innerHTML = `<h5>Premiered:&nbsp;&nbsp;</h5> ${data[index].premiereDate}`;\r\n      endDate.innerHTML = `<h5>End date: &nbsp;&nbsp;</h5> ${data[index].endDate}`;\r\n      movieLink.href = data[index].url;\r\n      summaryText.innerHTML = data[index].summary;\r\n\r\n      const commentForm = document.querySelector(`form[data-index=\"${index}\"]`);\r\n      const commentButton = commentForm.querySelector('.commentButton');\r\n      const commentInput = commentForm.querySelector('.comment');\r\n      const commentsSection = document.querySelector('.comments-section');\r\n\r\n      commentForm.addEventListener('submit', (e) => {\r\n        e.preventDefault();\r\n        const comment = commentInput.value;\r\n        (0,_cmment_js__WEBPACK_IMPORTED_MODULE_1__.addComment)(comment);\r\n\r\n        // Display the comment in the comments section\r\n        const commentItem = document.createElement('div');\r\n        commentItem.classList.add('comment-item');\r\n        commentItem.innerHTML = `<p>${comment}</p>`;\r\n        commentsSection.appendChild(commentItem);\r\n\r\n        commentInput.value = '';\r\n      });\r\n    });\r\n  });\r\n};\r\n\r\nawait (0,_cmment_js__WEBPACK_IMPORTED_MODULE_1__.getComments)();\r\n\r\nconst comment = 'This is a new comment';\r\n(0,_cmment_js__WEBPACK_IMPORTED_MODULE_1__.addComment)(comment);\r\n\r\n// Call the showPopup function to fetch data and display popups\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showPopup);\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } }, 1);\n\n//# sourceURL=webpack://group-capstone/./src/modules/popup.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _TVmazapi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TVmazapi.js */ \"./src/modules/TVmazapi.js\");\n/* harmony import */ var _cmment_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cmment.js */ \"./src/modules/cmment.js\");\n\r\n\r\n\r\nconst showPopup = async () => {\r\n  const popupImg = document.querySelector('.modal--img');\r\n  const popupTitle = document.querySelector('.modal-title');\r\n  const premierDate = document.querySelector('.premier-date');\r\n  const endDate = document.querySelector('.end-date');\r\n  const movieLink = document.querySelector('.movie-link');\r\n  const summaryText = document.querySelector('.summary-text');\r\n\r\n  const commentBtns = document.querySelectorAll('.comments-btn');\r\n  commentBtns.forEach((btn, index) => {\r\n    btn.addEventListener('click', async (event) => {\r\n      event.stopPropagation();\r\n      const data = await (0,_TVmazapi_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n      popupImg.src = data[index].image.medium;\r\n      popupTitle.innerHTML = data[index].name;\r\n      premierDate.innerHTML = `<h5>Premiered:&nbsp;&nbsp;</h5> ${data[index].premiereDate}`;\r\n      endDate.innerHTML = `<h5>End date: &nbsp;&nbsp;</h5> ${data[index].endDate}`;\r\n      movieLink.href = data[index].url;\r\n      summaryText.innerHTML = data[index].summary;\r\n\r\n       const commentForms = document.querySelectorAll('.modal-form');\r\n       commentForms.forEach((form) => {\r\n       form.addEventListener('submit', async (event) => {\r\n      event.preventDefault();\r\n      const username = form.querySelector('.username').value;\r\n      const comment = form.querySelector('.comment').value;\r\n      const itemId = form.getAttribute('data-index');\r\n      \r\n      try {\r\n        await (0,_cmment_js__WEBPACK_IMPORTED_MODULE_1__.addComment)(itemId, username, comment);\r\n        form.reset(); // Reset the form fields\r\n        await (0,_cmment_js__WEBPACK_IMPORTED_MODULE_1__.getComments)(itemId); // Reload comments\r\n      } catch (error) {\r\n        console.error(error);\r\n      }\r\n    });\r\n     });\r\n    });\r\n  });\r\n};\r\n\r\n// Call the showPopup function to fetch data and display popups\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showPopup);\n\n//# sourceURL=webpack://group-capstone/./src/modules/popup.js?");
 
 /***/ })
 
@@ -187,75 +187,6 @@ eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/async module */
-/******/ 	(() => {
-/******/ 		var webpackQueues = typeof Symbol === "function" ? Symbol("webpack queues") : "__webpack_queues__";
-/******/ 		var webpackExports = typeof Symbol === "function" ? Symbol("webpack exports") : "__webpack_exports__";
-/******/ 		var webpackError = typeof Symbol === "function" ? Symbol("webpack error") : "__webpack_error__";
-/******/ 		var resolveQueue = (queue) => {
-/******/ 			if(queue && !queue.d) {
-/******/ 				queue.d = 1;
-/******/ 				queue.forEach((fn) => (fn.r--));
-/******/ 				queue.forEach((fn) => (fn.r-- ? fn.r++ : fn()));
-/******/ 			}
-/******/ 		}
-/******/ 		var wrapDeps = (deps) => (deps.map((dep) => {
-/******/ 			if(dep !== null && typeof dep === "object") {
-/******/ 				if(dep[webpackQueues]) return dep;
-/******/ 				if(dep.then) {
-/******/ 					var queue = [];
-/******/ 					queue.d = 0;
-/******/ 					dep.then((r) => {
-/******/ 						obj[webpackExports] = r;
-/******/ 						resolveQueue(queue);
-/******/ 					}, (e) => {
-/******/ 						obj[webpackError] = e;
-/******/ 						resolveQueue(queue);
-/******/ 					});
-/******/ 					var obj = {};
-/******/ 					obj[webpackQueues] = (fn) => (fn(queue));
-/******/ 					return obj;
-/******/ 				}
-/******/ 			}
-/******/ 			var ret = {};
-/******/ 			ret[webpackQueues] = x => {};
-/******/ 			ret[webpackExports] = dep;
-/******/ 			return ret;
-/******/ 		}));
-/******/ 		__webpack_require__.a = (module, body, hasAwait) => {
-/******/ 			var queue;
-/******/ 			hasAwait && ((queue = []).d = 1);
-/******/ 			var depQueues = new Set();
-/******/ 			var exports = module.exports;
-/******/ 			var currentDeps;
-/******/ 			var outerResolve;
-/******/ 			var reject;
-/******/ 			var promise = new Promise((resolve, rej) => {
-/******/ 				reject = rej;
-/******/ 				outerResolve = resolve;
-/******/ 			});
-/******/ 			promise[webpackExports] = exports;
-/******/ 			promise[webpackQueues] = (fn) => (queue && fn(queue), depQueues.forEach(fn), promise["catch"](x => {}));
-/******/ 			module.exports = promise;
-/******/ 			body((deps) => {
-/******/ 				currentDeps = wrapDeps(deps);
-/******/ 				var fn;
-/******/ 				var getResult = () => (currentDeps.map((d) => {
-/******/ 					if(d[webpackError]) throw d[webpackError];
-/******/ 					return d[webpackExports];
-/******/ 				}))
-/******/ 				var promise = new Promise((resolve) => {
-/******/ 					fn = () => (resolve(getResult));
-/******/ 					fn.r = 0;
-/******/ 					var fnQueue = (q) => (q !== queue && !depQueues.has(q) && (depQueues.add(q), q && !q.d && (fn.r++, q.push(fn))));
-/******/ 					currentDeps.map((dep) => (dep[webpackQueues](fnQueue)));
-/******/ 				});
-/******/ 				return fn.r ? promise : getResult();
-/******/ 			}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
-/******/ 			queue && (queue.d = 0);
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
