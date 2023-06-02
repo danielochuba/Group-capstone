@@ -29,8 +29,8 @@ const addComment = async (itemId, username, comment) => {
     },
     body: JSON.stringify({
       item_id: itemId,
-      username,
-      comment,
+      username: username,
+      comment: comment,
     }),
   });
 
