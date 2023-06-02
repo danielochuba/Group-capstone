@@ -7,16 +7,14 @@ export const getLikes = async () => {
 };
 
 export const displayLikes = () => {
-    const likeBadges = document.querySelectorAll('.like-count');
-    getLikes().then((data) => {
-        data.forEach((like) => {
-            likeBadges.forEach((badge, index) => {
-                if (badge.id == like.item_id ) {
-                    badge.innerHTML = like.likes;
-                }
-            });
-        });
+  const likeBadges = document.querySelectorAll('.like-count');
+  getLikes().then((data) => {
+    data.forEach((like) => {
+      likeBadges.forEach((badge) => {
+        if (Number(badge.id) === Number(like.item_id)) {
+          badge.innerHTML = like.likes;
+        }
+      });
     });
+  });
 };
-
-
