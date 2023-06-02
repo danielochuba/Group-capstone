@@ -121,6 +121,10 @@ footer {
   justify-content: center;
 }
 
+.modal-form-section {
+  margin-top: 20px;
+}
+
 .form-control {
   width: 50%;
   margin: 10px;
