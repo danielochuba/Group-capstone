@@ -1,5 +1,6 @@
 import showPopup from './popup.js';
 import getAPIData from './TVmazapi.js';
+import { displayLikes } from './likesApiConfig.js';
 
 const showData = async () => {
   const result = await getAPIData();
@@ -11,9 +12,9 @@ const showData = async () => {
             <div class="card-body">
               <h5 class="card-title">${season.name}</h5>
               <p class="card-text">
-                <span class="badge text-bg-secondary ms-2">4</span> Likes
+                <span class="badge like-count text-bg-secondary ms-2" id="${season.number}"></span> Likes
 
-                <button type="button" class="btn btn-outline-info btn-sm ">
+                <button type="button" class="btn btn-outline-info btn-sm like-btn " id="${season.number}">
                   🤍
                 </button>
               </p>
@@ -26,9 +27,11 @@ const showData = async () => {
           `;
   });
 };
+
 const homePage = async () => {
   await showData();
   await showPopup();
+  await displayLikes();
 };
 
 export default homePage;
