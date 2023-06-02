@@ -20,6 +20,25 @@ const showPopup = async () => {
       endDate.innerHTML = `<h5>End date: &nbsp;&nbsp;</h5> ${data[index].endDate}`;
       movieLink.href = data[index].url;
       summaryText.innerHTML = data[index].summary;
+
+      const commentForm = document.querySelector(`form[data-index="${index}"]`);
+      const commentButton = commentForm.querySelector('.commentButton');
+      const commentInput = commentForm.querySelector('.comment');
+      const commentsSection = document.querySelector('.comments-section');
+
+      commentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const comment = commentInput.value;
+        addComment(comment);
+
+        // Display the comment in the comments section
+        const commentItem = document.createElement('div');
+        commentItem.classList.add('comment-item');
+        commentItem.innerHTML = `<p>${comment}</p>`;
+        commentsSection.appendChild(commentItem);
+
+        commentInput.value = '';
+      });
     });
   });
 };
