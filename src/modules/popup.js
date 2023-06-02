@@ -1,4 +1,5 @@
 import getAPIData from './TVmazapi.js';
+import { addComment, getComments } from './cmment.js';
 
 const showPopup = async () => {
   const popupImg = document.querySelector('.modal--img');
@@ -22,6 +23,11 @@ const showPopup = async () => {
     });
   });
 };
+
+await getComments();
+
+const comment = 'This is a new comment';
+addComment(comment);
 
 // Call the showPopup function to fetch data and display popups
 export default showPopup;

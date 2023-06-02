@@ -125,3 +125,14 @@ footer {
   width: 50%;
   margin: 10px;
 }
+
+.comments-section {
+  width: 100%;
+  border: none;
+  border-radius: 2px;
+}
+
+.point {
+  font-weight: 800;
+  margin-left: 10px;
+}
