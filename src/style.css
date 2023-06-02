@@ -125,6 +125,11 @@ footer {
   margin-top: 20px;
 }
 
+.comments {
+  margin: auto;
+  width: 45%;
+}
+
 .form-control {
   width: 50%;
   margin: 10px;

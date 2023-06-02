@@ -6,21 +6,6 @@ const getSpecificComment = async (id) => {
   return data;
 };
 
-const postComment = async (id, name, comment) => {
-  const response = await fetch(COMMENTS_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      item_id: id,
-      username: name,
-      comment,
-    }),
-  });
-  return response.json();
-};
-
 const displayComments = async (id) => {
   const comments = await getSpecificComment(id);
   const commentsContainer = document.querySelector('.comments');
@@ -36,18 +21,6 @@ const displayComments = async (id) => {
   });
 };
 
-const submitComments = () => {
-  const commentBtn = document.querySelector('.commentButton');
-  commentBtn.addEventListener('click', async (event) => {
-    event.preventDefault();
-    const { id } = commentBtn;
-    const name = document.querySelector('.name-input').value;
-    const comment = document.querySelector('.comment-input').value;
-    postComment(id, name, comment);
-    displayComments(id);
-  });
-};
-
 export {
-  displayComments, submitComments, getSpecificComment,
+  displayComments, getSpecificComment,
 };

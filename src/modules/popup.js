@@ -1,4 +1,5 @@
 import getAPIData from './TVmazapi.js';
+import { getSpecificComment, displayComments, submitComments } from './commentsApiConfig.js';
 
 const showPopup = async () => {
   const popupImg = document.querySelector('.modal--img');
@@ -7,6 +8,7 @@ const showPopup = async () => {
   const endDate = document.querySelector('.end-date');
   const movieLink = document.querySelector('.movie-link');
   const summaryText = document.querySelector('.summary-text');
+  let commentSumitBtn;
 
   const commentBtns = document.querySelectorAll('.comments-btn');
   commentBtns.forEach((btn, index) => {
@@ -19,6 +21,11 @@ const showPopup = async () => {
       endDate.innerHTML = `<h5>End date: &nbsp;&nbsp;</h5> ${data[index].endDate}`;
       movieLink.href = data[index].url;
       summaryText.innerHTML = data[index].summary;
+      commentSumitBtn = document.querySelector('.commentButton');
+      commentSumitBtn.id = data[index].number;
+      getSpecificComment(commentSumitBtn.id);
+      displayComments(commentSumitBtn.id);
+      submitComments();
     });
   });
 };
