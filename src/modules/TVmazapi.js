@@ -1,9 +1,14 @@
-const urlAPI = 'https://api.tvmaze.com/shows/7/seasons';
+// const serieshow = () => {
+//   const url = 'https://api.tvmaze.com/shows/7/seasons';
 
-const getAPIData = async () => {
-  const response = await fetch(`${urlAPI}`);
-  const data = await response.json();
-  return data;
-};
+//   const config = {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   };
 
-export default getAPIData;
+//   // Rest of your code here...
+// };
+
+// export default serieshow;
