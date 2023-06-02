@@ -2,9 +2,10 @@ import showPopup from './popup.js';
 import getAPIData from './TVmazapi.js';
 import { displayLikes, submitLikes } from './likesApiConfig.js';
 
+const cardContainer = document.querySelector('#container');
+
 const showData = async () => {
   const result = await getAPIData();
-  const cardContainer = document.querySelector('#container');
   result.forEach((season) => {
     cardContainer.innerHTML += `
         <div class="card col-lg-4 col-md-6 col-sm-12 gy-3">
@@ -14,7 +15,7 @@ const showData = async () => {
               <p class="card-text">
                 <span class="badge like-count text-bg-secondary ms-2" id="${season.number}"></span> Likes
 
-                <button type="button" class="btn btn-outline-info btn-sm like-btn " id="${season.number}">
+                <button type="button" class="btn btn-outline-info btn-sm like-btn" id="${season.number}">
                   🤍
                 </button>
               </p>

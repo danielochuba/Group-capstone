@@ -1,14 +1,15 @@
 const LIKE_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Nbc4s2TFp5CN6zapCfwg/likes';
-const likeBtns = document.querySelectorAll('.like-btn');
-const likeBadges = document.querySelectorAll('.like-count');
+let likeBtns;
+let likeBadges;
 
-export const getLikes = async () => {
+const getLikes = async () => {
   const response = await fetch(LIKE_URL);
   const data = await response.json();
   return data;
 };
 
-export const displayLikes = () => {
+const displayLikes = () => {
+  likeBadges = document.querySelectorAll('.like-count');
   getLikes().then((data) => {
     data.forEach((like) => {
       likeBadges.forEach((badge) => {
@@ -20,7 +21,7 @@ export const displayLikes = () => {
   });
 };
 
-export const postLikes = async (id) => {
+const postLikes = async (id) => {
   const response = await fetch(LIKE_URL, {
     method: 'POST',
     headers: {
@@ -33,13 +34,23 @@ export const postLikes = async (id) => {
   return response.json();
 };
 
-export const submitLikes = () => {
+const submitLikes = () => {
+  likeBtns = document.querySelectorAll('.like-btn');
   likeBtns.forEach((btn) => {
-    btn.addEventListener('click', (event) => {
+    btn.addEventListener('click', async (event) => {
       event.stopPropagation();
-      const { id } = btn;
+      // eslint-disable-next-line prefer-destructuring
+      const id = btn.id;
       postLikes(id);
       displayLikes();
     });
   });
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+  submitLikes();
+});
+
+export {
+  displayLikes, submitLikes, getLikes, postLikes,
 };
