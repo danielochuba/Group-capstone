@@ -2,17 +2,17 @@ import countComments from './commentsCounter.js';
 
 const { JSDOM } = require('jsdom');
 
-// Mock the async function `func` that is passed to `countComments`
-const mockFunc = async () => [
+// Mock the async function `getSpecificComment`
+const mockGetSpecificComment = jest.fn().mockResolvedValue([
   { id: 1, text: 'Comment 1' },
   { id: 2, text: 'Comment 2' },
   { id: 3, text: 'Comment 3' },
-];
+]);
+
 describe('countComments', () => {
   let originalQuerySelector;
 
   beforeEach(() => {
-    // Set up the JSDOM environment
     const dom = new JSDOM('<body><div class="comment-count"></div></body>');
     global.document = dom.window.document;
     originalQuerySelector = global.document.querySelector;
@@ -30,9 +30,17 @@ describe('countComments', () => {
     });
 
     // Call the `countComments` function
-    await countComments(mockFunc, 123);
+    await countComments(123);
 
     // Check if the comment count label is updated correctly
     expect(global.document.querySelector('.comment-count').innerHTML).toBe('3');
+  });
+
+  it('should call getSpecificComment with the correct ID', async () => {
+    // Call the `countComments` function
+    await countComments(456);
+
+    // Check if getSpecificComment is called with the correct ID
+    expect(mockGetSpecificComment).toHaveBeenCalledWith(456);
   });
 });

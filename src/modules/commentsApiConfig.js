@@ -1,5 +1,3 @@
-import countComments from './commentsCounter.js';
-
 const COMMENTS_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Nbc4s2TFp5CN6zapCfwg/comments?item_id=';
 const commentsContainer = document.querySelector('.comments');
 
@@ -38,6 +36,12 @@ const displayComments = async (id) => {
   });
 };
 
+const countComments = async (id) => {
+  const commentsData = await getSpecificComment(id);
+  const commetLabel = document.querySelector('.comment-count');
+  commetLabel.innerHTML = commentsData.length.toString();
+};
+
 const submitComments = () => {
   const commentBtn = document.querySelector('.commentButton');
   const nameInput = document.querySelector('.name-input');
@@ -53,8 +57,7 @@ const submitComments = () => {
       nameInput.value = '';
       commentInput.value = '';
       await displayComments(id);
-      countComments(getSpecificComment, id);
-      countComments();
+      countComments(id);
     }
   });
 };
