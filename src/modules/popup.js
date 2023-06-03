@@ -8,7 +8,6 @@ const showPopup = async () => {
   const endDate = document.querySelector('.end-date');
   const movieLink = document.querySelector('.movie-link');
   const summaryText = document.querySelector('.summary-text');
-  let commentSumitBtn;
 
   const commentBtns = document.querySelectorAll('.comments-btn');
   commentBtns.forEach((btn, index) => {
