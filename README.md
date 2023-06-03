@@ -1,13 +1,11 @@
-# Leaderboard : Capstone Project
 <a name="readme-top"></a>
 
 <div align="center">
+  <br/>
 
   <h3><b>JavaScript capstone project - Your API-based webapp</b></h3>
 
 </div>
-
-<!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
@@ -15,105 +13,101 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    [🚀 Live Demo](#live-demo)
+  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
+  - [👥 Contributors](#contributors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
+- [⚠️Disclaimer](#disclaimer)
 
-<!-- PROJECT DESCRIPTION -->
-# 📖Leaderboard : hit the API<a name="about-project"></a>
-For this milestone, I create a setup of the structure and layout for a leaderboard webpage, displaying recent scores and allowing users to add their own scores.
+# 📖 [JavaScript capstone project] <a name="about-project"></a>
+
+**[JavaScript capstone project]** is a work in progress for the second capstone of the
+microverse curriculum. We used a content delivery API to fetch the top 16
+series show and displayed them on a grid, including a feature enabling the
+user to like a serie and leave a comment about it.
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> This project focuses only on `linters` and `.gitignore`. and JS or Server are included in this repo.
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://www.w3.org/html/">HTML</a></li>
-    <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">SCSS</a></li>
-    <li><a href="https://www.javascript.com/">JavaScript</a></li>
+    <li><a href="https://developer.mozilla.org/en/docs/Learn/HTML">HTML</a></li>
+    <li><a href="https://developer.mozilla.org/en/docs/Web/CSS">CSS</a></li>
+    <li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript">JavaScript</a></li>
+    <li><a href="https://webpack.js.org/">webpack</a></li>
   </ul>
 </details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://www.netlify.com/">Netlify</a></li>
-  </ul>
-</details>
-
-<!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-> Use webpack to bundle JavaScript.
-
-- [ ] **[Use API documentation.]**
-- [ ] **[Make JavaScript code asynchronous.]**
-- [ ] **[Use medium-fidelity wireframes to create a UI.]**
+- **[using API to manage and retrieve information]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🚀 Live Demo <a name="live-demo"></a>
 
-<!-- LIVE DEMO -->
-## 🤝 Contributing <a name="contributing"></a>
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](https://github.com/Gardimy/Leaderboard_project/issues).
+- watch [this](https://jhggj/share/live)
+quick intro
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
->If you are a new developer and would like to have a basic project to start practicing your code or creating your first project Using the most receent version of javaScript ,HTML and CSS : Cloning this project will give you what you need!
+To get a local copy up and running cloning this repo `https://github.com/danielochuba/Group-capstone`.
 
-> To get a local copy up and running, follow these steps: npm run dev or npm start to start this app.
 ### Prerequisites
 
-In order to run this project you need:
-
-- Have [npm](https://www.npmjs.com/package/npm) installed in your project:
-  `curl -qL https://www.npmjs.com/install.sh | sh`
+There are no known prerequisites to run this project.
+If you encounter any issues trying to run it, please feel free to
+[open a ticket](https://github.com/danielochuba/Group-capstone/issues) to let me know and i will work on it to the best
+of my abilities
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-`https://github.com/Gardimy/Leaderboard_project`
+`https://github.com/danielochuba/Group-capstone`
 
 or
 
-`https://github.com/Gardimy/Leaderboard_project` <-- _Only if you have [SSH keys configured](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) on your GitHub account_.
-
-### Install:
-
-run the `npm install ` command in your console.
+`https://github.com/danielochuba/Group-capstone` <-- _Only if you have [SSH keys configured](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) on your GitHub account_.
 
 ### Usage
 
-To run the linters before committing any changes to your code, execute the following commands:
+To run the project:
 
-`npx hint .`
-`npx stylelint "**/*.scss"` <--_NOTE: this repo is set up to use with SCSS. If you would like to use CSS, you must replace `"**/*.scss"` with `"**/*.{css,scss}"` in **line 48** of the `.stylelintrc.json` file, and run the linter with:_
+- Method 1:
 
-`npx stylelint "**/*.{css,scss}"` _instead_.
+```sh
+  cd PATH_TO_CLONE
+  npm install
+  npm run build
+  npm start
+```
+
+Method 2:
+Open './dist/index.html' in your browser of choice
+
+### Deployment
+
+You can deploy this project using [github pages](https://docs.github.com/en/pages/quickstart)
+or a web-hosting platform of your choice.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
@@ -122,30 +116,47 @@ To run the linters before committing any changes to your code, execute the follo
 - Twitter: [@gardyelontiga45](https://twitter.com/gardyelontiga45)
 - LinkedIn: [Gardimy charles](https://www.linkedin.com/in/gardimy-charles)
 
-<!-- FUTURE FEATURES -->
+## 👥 Colaborators <a name="colaborators"></a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Send and receive data from an API.
-- Use API documentation.
-- Understand and use JSON.
-- Make JavaScript code asynchronous.
+- **[ Where your ideas take us!! ]**
 
-<!-- CONTRIBUTING -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+Your ideas may trigger the next features of the project
+once my knowledge base can reach the level of your imagination
+
+Feel free to check the [issues page](https://github.com/danielochuba/Group-capstone/issues/32).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> If you like this project please give me a star on GitHub.And Don't hesitate to follow me on github, you will have the opportunity to get all updating available for this project.
+If you like this project feel free to use it as you please within the scope of
+_[the license](./LICENSE)_ Credit will be appreciated but not mandatory.
 
-<!-- ACKNOWLEDGEMENTS -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> I would like to thank [microverse](https://www.microverse.org/) for teaching me this Skills
-<!-- LICENSE -->
+- Inspired by [Microverse](https://www.microverse.org/)'s curriculum
+- [favicon](https://www.pixiv.net/en/artworks/71008974) by [横gon](https://www.pixiv.net/en/users/29647895)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+
+- **[No questions have been asked]**. Be the first curious mind
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
 ## 📝 License <a name="license"></a>
 
 This project is [MIT license](./LICENSE) licensed.
