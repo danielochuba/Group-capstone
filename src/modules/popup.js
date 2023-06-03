@@ -22,12 +22,12 @@ const showPopup = async () => {
       summaryText.innerHTML = data[index].summary;
 
       const commentForms = document.querySelectorAll('.modal-form');
-      commentForms.forEach((form) => {
+      commentForms.forEach((form, formIndex) => {
         form.addEventListener('submit', async (event) => {
           event.preventDefault();
           const username = form.querySelector('.username').value;
           const comment = form.querySelector('.comment').value;
-          const itemId = form.getAttribute('data-index');
+          const itemId = data[formIndex].id; // Use the correct item ID
 
           try {
             await addComment(itemId, username, comment);

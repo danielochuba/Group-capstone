@@ -10,7 +10,12 @@ const getComments = async (itemId) => {
 
     comments.forEach((comment) => {
       const commentElement = document.createElement('div');
-      commentElement.innerHTML = `<p><strong>${comment.creation_date}</strong>: <strong>${comment.username}</strong>: ${comment.comment}</p>`;
+      commentElement.innerHTML = `
+      <div class="comment">
+        <span class="comment-date">${comment.creation_date} &nbsp;</span>
+        <span class="comment-name"><strong>${comment.username} :</strong></span>
+        <span class="comment-text">${comment.comment}</span>
+      </div>`;
       commentsSection.appendChild(commentElement);
     });
   } catch (error) {
