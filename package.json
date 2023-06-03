@@ -4,10 +4,10 @@
   "description": "<a name=\"readme-top\"></a>",
   "main": "jest.config.js",
   "scripts": {
-    "test": "jest",
-    "build": "webpack --mode production",
-    "start": "webpack --mode development --config webpack.config.js --watch"
-  },
+  "test": "jest",
+  "build": "webpack --mode production",
+  "start": "webpack serve --mode development --open"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danielochuba/Group-capstone.git"
