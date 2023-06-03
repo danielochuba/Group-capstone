@@ -1,4 +1,5 @@
 import getAPIData from './TVmazapi.js';
+import countComments from './commentsCounter.js';
 import { getSpecificComment, displayComments, submitComments } from './commentsApiConfig.js';
 
 const showPopup = async () => {
@@ -26,6 +27,7 @@ const showPopup = async () => {
       getSpecificComment(commentSumitBtn.id);
       displayComments(commentSumitBtn.id);
       submitComments();
+      countComments(getSpecificComment, commentSumitBtn.id);
     });
   });
 };

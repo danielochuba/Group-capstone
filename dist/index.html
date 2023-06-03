@@ -27,7 +27,7 @@
     <img class="logo" src="https://shorturl.at/aqVZ5" alt="">
     <nav>
       <ul>
-        <li>TVmaze</li>
+        <li>TVmaze( <span class="items-counter"></span> )</li>
         <li>Series</li>
         <li><a href="index.html">Feature</a> </li>
       </ul>
@@ -84,7 +84,7 @@
             </li>
           </ul>
           <div class="comments-container">
-            <h2 class="text-center">Comments</h2>
+            <h2 class="text-center">Comments(<span class="comment-count"></span>)</h2>
             <div class="comments">
               
             </div>
@@ -92,11 +92,8 @@
           <div class="modal-form-section">
             <h2 class="text-center">Add a Comment</h2>
             <form id="myForm" class="modal-form">
-              <label for="username"></label>
               <input class='username form-control name-input' type="text" name="username" placeholder="Your Name" required>
-              <label for="Comment"></label>
-              <textarea class='comment form-control comment-input' id="Comment" placeholder="Your insights" maxlength="600"
-                name="message" required></textarea>
+              <textarea class='comment form-control comment-input' id="Comment" placeholder="Your insights" maxlength="600" name="message" required></textarea>
               <button class="commentButton btn btn-sm btn-outline-info" type="submit" data-index="${serie.id}">Comment</button>
             </form>
           </div>
