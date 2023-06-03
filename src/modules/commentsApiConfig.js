@@ -1,6 +1,7 @@
 import countComments from './commentsCounter.js';
 
 const COMMENTS_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Nbc4s2TFp5CN6zapCfwg/comments?item_id=';
+const commentsContainer = document.querySelector('.comments');
 
 const getSpecificComment = async (id) => {
   const response = await fetch(`${COMMENTS_URL}${id}`);
@@ -25,7 +26,6 @@ const postComment = async (id, name, comment) => {
 
 const displayComments = async (id) => {
   const comments = await getSpecificComment(id);
-  const commentsContainer = document.querySelector('.comments');
   commentsContainer.innerHTML = '';
   comments.forEach((comment) => {
     commentsContainer.innerHTML += `
@@ -53,6 +53,8 @@ const submitComments = () => {
     commentInput.value = '';
     await displayComments(id);
     countComments(getSpecificComment, id);
+    commentBtn.disabled = true;
+    commentBtn.value = 'submitting....';
   });
 };
 
