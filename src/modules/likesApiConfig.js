@@ -39,8 +39,7 @@ const submitLikes = () => {
   likeBtns.forEach((btn) => {
     btn.addEventListener('click', async (event) => {
       event.stopPropagation();
-      // eslint-disable-next-line prefer-destructuring
-      const id = btn.id;
+      const { id } = btn;
       postLikes(id);
       displayLikes();
     });

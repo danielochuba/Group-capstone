@@ -1,6 +1,5 @@
 import countComments from './commentsCounter.js';
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 const { JSDOM } = require('jsdom');
 
 // Mock the async function `func` that is passed to `countComments`
