@@ -82,11 +82,12 @@ footer {
 
 .summary-text {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 15px;
 }
 
 .modal--img {
-  width: 58%;
-  height: 470px;
+  width: 43%;
+  height: 318px;
   margin: auto;
   display: block;
 }
