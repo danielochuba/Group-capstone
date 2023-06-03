@@ -1,3 +1,5 @@
+import countComments from './commentsCounter.js';
+
 const COMMENTS_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Nbc4s2TFp5CN6zapCfwg/comments?item_id=';
 
 const getSpecificComment = async (id) => {
@@ -38,15 +40,19 @@ const displayComments = async (id) => {
 
 const submitComments = () => {
   const commentBtn = document.querySelector('.commentButton');
+  const nameInput = document.querySelector('.name-input');
+  const commentInput = document.querySelector('.comment-input');
+
   commentBtn.addEventListener('click', async (event) => {
     event.preventDefault();
     const { id } = commentBtn;
-    const name = document.querySelector('.name-input').value;
-    const comment = document.querySelector('.comment-input').value;
-    await postComment(id, name, comment);
-    document.querySelector('.comment-input').value = '';
-    document.querySelector('.name-input').value = '';
-    displayComments(id);
+    const name = nameInput.value;
+    const comment = commentInput.value;
+    postComment(id, name, comment);
+    nameInput.value = '';
+    commentInput.value = '';
+    await displayComments(id);
+    countComments(getSpecificComment, id);
   });
 };
 
