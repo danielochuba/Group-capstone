@@ -60,7 +60,7 @@ user to like a serie and leave a comment about it.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- watch [this](https://jhggj/share/live](https://drive.google.com/file/d/1bpfBOU2DUiiJIqVNQ9XYicXYawXZiQlv/view?usp=sharing)
+- watch [this](https://drive.google.com/file/d/1bpfBOU2DUiiJIqVNQ9XYicXYawXZiQlv/view?usp=sharing)
 quick intro
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
