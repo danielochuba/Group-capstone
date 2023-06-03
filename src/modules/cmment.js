@@ -1,3 +1,5 @@
+import commentCounter from './commentCounter.js';
+
 const involvement = 'Nbc4s2TFp5CN6zapCfwg';
 
 const getComments = async (itemId) => {
@@ -17,10 +19,12 @@ const getComments = async (itemId) => {
         <span class="comment-text">${comment.comment}</span>
       </div>`;
       commentsSection.appendChild(commentElement);
+      commentCounter();
     });
   } catch (error) {
     const commentsSection = document.querySelector('.comments-section');
     commentsSection.innerHTML = 'Error loading comments.';
+    commentCounter();
   }
 };
 
