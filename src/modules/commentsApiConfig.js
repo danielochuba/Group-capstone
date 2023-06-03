@@ -48,13 +48,14 @@ const submitComments = () => {
     const { id } = commentBtn;
     const name = nameInput.value;
     const comment = commentInput.value;
-    postComment(id, name, comment);
-    nameInput.value = '';
-    commentInput.value = '';
-    await displayComments(id);
-    countComments(getSpecificComment, id);
-    commentBtn.disabled = true;
-    commentBtn.value = 'submitting....';
+    if (name !== '' && comment !== '') {
+      postComment(id, name, comment);
+      nameInput.value = '';
+      commentInput.value = '';
+      await displayComments(id);
+      countComments(getSpecificComment, id);
+      countComments();
+    }
   });
 };
 
