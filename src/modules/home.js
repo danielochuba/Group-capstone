@@ -1,6 +1,6 @@
 import showPopup from './popup.js';
 import getAPIData from './TVmazapi.js';
-import { displayLikes, submitLikes } from './likesApiConfig.js';
+import { displayLikes, submitLikes } from './like.js';
 
 const cardContainer = document.querySelector('#container');
 

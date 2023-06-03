@@ -83,19 +83,17 @@
               </p>
             </li>
           </ul>
-          <div class="comments-container">
-            <h2 class="text-center">Comments</h2>
-            <div class="comments">
-              
-            </div>
-          </div>
+        <!-- Comments Section -->
+         <div><h2 class="text-center">Comments(<span class="comment-count"></span>)<h2></h2></div>
+        <div class="comments-section">
+        
+        </div>
+
           <div class="modal-form-section">
             <h2 class="text-center">Add a Comment</h2>
-            <form id="myForm" class="modal-form">
-              <label for="username"></label>
-              <input class='username form-control name-input' type="text" name="username" placeholder="Your Name" required>
-              <label for="Comment"></label>
-              <textarea class='comment form-control comment-input' id="Comment" placeholder="Your insights" maxlength="600"
+            <form class="modal-form" data-id="${index}">
+              <input class='username form-control' type="text" name="username" placeholder="Your Name" required>
+              <textarea class='comment form-control' id="comment" placeholder="Your insights" maxlength="600"
                 name="message" required></textarea>
               <button class="commentButton btn btn-sm btn-outline-info" type="submit" data-index="${serie.id}">Comment</button>
             </form>
