@@ -1,4 +1,4 @@
-import countComments from 'src/modules/commentCounter.js';
+const countComments = require('./commentCounter.js');
 
 describe('countComments', () => {
   beforeEach(() => {

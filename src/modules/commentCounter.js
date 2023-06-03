@@ -5,4 +5,4 @@ const countComments = () => {
   commentCountSpan.textContent = comments.length.toString();
 };
 
-export default countComments;
+module.exports = countComments;
