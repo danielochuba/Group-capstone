@@ -59,7 +59,8 @@ user to like a serie and leave a comment about it.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-
+- View Live page [APP](https://moviesdb-zrut.onrender.com/)
+quick intro
 - watch [this](https://drive.google.com/file/d/1bpfBOU2DUiiJIqVNQ9XYicXYawXZiQlv/view?usp=sharing)
 quick intro
 
